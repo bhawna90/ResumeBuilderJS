@@ -26,26 +26,33 @@ function submitForm(e){
     document.querySelector(".skills-details").innerHTML=str
 
     //add experiences
-    const experienceEle = document.getElementsByClassName("experience-input-field")
-    console.log(experienceEle);
+    const experienceCompanyEle = document.getElementsByClassName("company-name-field")
+    const experienceRoleEle = document.getElementsByClassName("role-field")
+    const experienceProjectEle = document.getElementsByClassName("project-desc-field")
+    console.log(experienceCompanyEle,experienceRoleEle, experienceProjectEle);
     const expHolderEle = document.getElementById("experiences-holder")
     expHolderEle.innerHTML=""
-    for(let i=0;i<experienceEle.length;i++){
-        const exp = experienceEle[i].value
+    for(let i=0;i<experienceCompanyEle.length;i++){
         const newDiv = document.createElement("div")
-        newDiv.innerHTML = exp
+        newDiv.className = "work-ex-details"
+        newDiv.innerHTML = `<div class="company-name">${experienceCompanyEle[i].value}</div>
+        <div class="role">${experienceRoleEle[i].value}</div>
+        <div class="project">
+        ${experienceProjectEle[i].value}
+        </div>`
         expHolderEle.appendChild(newDiv)
     }
+
+
 }
-// document.getElementsByTagName("form")[0].addEventListener("submit",submitForm)
-
-
 function addExperienceField(){
-    const inputEle = document.createElement("input")
-    inputEle.type="text"
-    inputEle.className="experience-input-field"
-    inputEle.id="ex-id"
-    document.getElementById("experience-container-form").appendChild(inputEle)
+    const expHolder = document.createElement("div")
+    expHolder.className = "experience-holder"
+    expHolder.innerHTML = `<input  type="text" class="experience-input-field company-name-field" placeholder="Company Name">
+    <input  type="text" class="experience-input-field role-field" placeholder="Role">
+    <input  type="text" class="experience-input-field project-desc-field" placeholder="Project Description">
+`
+    document.getElementById("experience-container-form").appendChild(expHolder)
 }
 function addEducationField(){
 

@@ -20,7 +20,6 @@ body{
 input{
     display: block;
     width: 100%;
-    color: grey;
     padding: 8px;
     font-size: 20px;
 }
@@ -43,7 +42,8 @@ input{
 .left-section{
     width: 30%;
     background-color: rgb(89, 89, 238);
-    color: white
+    color: white;
+    overflow: scroll;
 }
 .image-container img{
     height: 120px;
@@ -73,7 +73,9 @@ h3{
 }
 .right-section{
     width: 70%;
-    padding: 20px
+    padding: 20px;
+    overflow: scroll;
+
 }
 .work-experience, .education{
     margin-top: 30px
@@ -114,4 +116,10 @@ h3{
 }
 .college-name{
     font-weight:bold
+}
+.experience-input-field{
+    margin-bottom: 10px;
+}
+.experience-holder{
+    margin-bottom: 50px;
 }
